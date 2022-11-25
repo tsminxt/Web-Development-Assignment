@@ -1,0 +1,103 @@
+<!DOCTYPE html >
+<html>
+<head>
+<title>Form Processor</title>
+<style>
+article {
+		font-family: arial;
+		font-size:20px;
+		padding:10px;
+		border-radius:30px 30px;
+		background-color: #009092;
+		margin:10px auto;
+		border-style: groove;
+		border-color: black;
+		width:400px;
+		box-shadow:  5px 10px;
+}
+
+ h1 {
+	 font-family: arial;
+	 text-align:center }
+
+.blank {
+	font-weight:900;
+}
+
+</style>
+</head>
+<body>
+<script type="text/javascript">
+	
+//HIDE FROM INCOMPATIBLE BROWSERS;-->
+
+var formData = location.search;
+formData = formData.substring(1, formData.length);
+while (formData.indexOf("+") != -1) {
+	formData = formData.replace("+", " ");
+}
+formData = unescape(formData);
+var formArray = formData.split("&");
+var para=new Array();
+
+function setColor(c){
+	var allBlanks=document.getElementsByClassName("blank");
+
+		for (i=0; i<allBlanks.length; i++)
+			allBlanks[i].style.color=c;
+}
+
+// STOP HIDING FROM INCOMPATIBLE BROWSERS -->
+</script>
+<article>
+<h3>Receipt</h3>
+<p>Full Name: <br><span id="name" class="blank"></span><br>
+	<br>
+<p>Phone Number: <br><span id="phone-number" class="blank"></span><br>
+		<br>
+<p>Dishes to order: <br><span id="dishes" class="blank"></span><br>
+	<br>
+<p>Quantity: <br> <span id="quantity" class="blank"></span><br>
+	<br>
+<p>Way to eat: <br><span id="waytoeat" class="blank"></span><br>
+	<br>
+<p>Timing for booking: <br> <span id="timingforbooking" class="blank"></span><br>
+	<br>
+<p>Number of seats:<br> <span id="numberofseats" class="blank"></span><br>
+</p>
+</article>
+
+<script>
+for (var i=0; i < formArray.length; ++i) {
+
+	para=formArray[i].split("=");
+
+	switch (para[0]) {
+		case "name":
+					document.getElementById("name").innerHTML=para[1];
+					break;
+		case "phone-number":
+					document.getElementById("phone-number").innerHTML=para[1];
+					break;
+		case "dishes":
+				 document.getElementById("dishes").innerHTML=para[1];
+				 break;
+		case "quantity":
+					document.getElementById("quantity").innerHTML=para[1];
+					break;
+		case "waytoeat":
+					document.getElementById("waytoeat").innerHTML=para[1];
+					break;
+		case "timingforbooking":
+					document.getElementById("timingforbooking").innerHTML=para[1];
+					break;
+	  case "numberofseats":
+					document.getElementById("numberofseats").innerHTML=para[1];
+					break;
+    }
+}
+setColor(color);
+
+</script>
+</body>
+</html>

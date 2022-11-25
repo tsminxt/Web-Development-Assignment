@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<body style="background-color: #D2BAEA;">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="Submission.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <title>Ordering Form</title>
+  </head>
+  <div class="container-fluid">
+
+  <nav>
+    <div class="logo">
+      <img src="images\logo.png">
+    </div>
+    <div class="navlinks">
+      <ul>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Submission.html" class="current">Ordering Form</a></li>
+        <li><a href="LuckyDraw.html">Lucky Draw</a></li>
+      </ul>
+    </div>
+  </nav>
+  <body>
+<div class="main">
+    <div class="form">
+      <form method="get" action="formprocess2.html">
+      <h3>Ordering Form</h3>
+      <form method="get" action="Submission.html">
+        <label for="name">Please enter your name:</label>
+        <input type="textarea" name="name" placeholder="Name!" required>
+        <br>
+        <label for="phone-number">Please enter your phone number:</label>
+        <input type="phone-number" name="phone-number" placeholder="Phone Number!" required>
+        <br>
+      <label for="dishes">Dishes to order:</label>
+      <select id="dishes" name="dishes" required>
+        <option value="Oyaka Don">Oyaka Don</option>
+        <option value="Okonomiyaki">Okonomiyaki</option>
+        <option value="Sushi">Sushi</option>
+      </select>
+      <br>
+      <label for="quantity">Please input quantity of dishes: </label>
+      <input type="number" name="quantity" min="0" max="10" value="0">
+      <br>
+      <label for="waytoeat">Way to eat:</label><br>
+      <label for="takeaway">Take Away</label>
+      <input type="radio" id="takeaway" name="waytoeat" value="Take Away" required><br>
+      <label for="dinein">Dine In</label>
+      <input type="radio" id="dinein" name="waytoeat" value="Dine In" required><br>
+      <hr>
+      <label for="timingforbooking">Please type the time for booking:</label>
+      <br>
+      <input type="textarea" name="timingforbooking" placeholder="Timing!" required>
+      <br>
+      <label for="numberofseats">Number of seats for Dine-in:</label>
+      <input type="number" name="numberofseats" min="0" max="10" value="0">
+      <br>
+      <input type="submit" value="Submit">
+      <br>
+    </div>
+    <br>
+      <input type="button" name="submission" class="button" value="Lucky Draw" onclick="location.href='LuckyDraw.html'">
+      <hr>
+  </form>
+  <div class="container">
+  		<div class="feedback-box">
+  			<div class="right">
+  				<h2>Feedback/Contact Us</h2>
+  				<input type="text" class="field" placeholder="Your Name">
+  				<input type="text" class="field" placeholder="Your Email">
+  				<input type="text" class="field" placeholder="Phone">
+  				<textarea placeholder="Message" class="field"></textarea>
+          <label for="field">Satisfication Level:</label>
+          <input type="range" name="field" min="1" max="5" value="1">
+          <br><br>
+  				<button class="btn">Send</button>
+  			</div>
+  		</div>
+  	</div>
+</div>
+  </div>
+  </body>
+</html>
